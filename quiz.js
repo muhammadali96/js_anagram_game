@@ -40,15 +40,19 @@ function pick_random_word(chosen_category) {
     let random_word = categories_values[random_word_index]
     console.log(random_word)
     return random_word
-    
+};
 
-//function jumbling_up_words():
-  //  let jumbled_letters = Object.values
+function jumbling_up_words(){
+    random_word = pick_random_word(chosen_category)
+    console.log(random_word)
+    let jumbled_letters = Object.values(random_word)
+    console.log(jumbled_letters)
+};
     // let jumbled_letters = list(random_word) //break random word into separate strings (each letter as a string)
     // random.shuffle(jumbled_letters)  //jumbling up the letters ramdomly
     // jumbled_word = "".join(jumbled_letters) //joining single letters back up
     // return jumbled_word, random_word
-};
+
 
 
 
@@ -65,3 +69,4 @@ function pick_random_word(chosen_category) {
 
 let chosen_category = get_category_choice()
 pick_random_word(chosen_category)
+jumbling_up_words() 
