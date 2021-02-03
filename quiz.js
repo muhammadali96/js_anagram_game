@@ -45,8 +45,11 @@ function pick_random_word(chosen_category) {
 function jumbling_up_words(){
     random_word = pick_random_word(chosen_category)
     console.log(random_word)
-    let jumbled_letters = Object.values(random_word)
+    let seperated_letters = Object.values(random_word)
+    console.log(seperated_letters)
+    let jumbled_letters = seperated_letters.sort(() => Math.random() - 0.5)
     console.log(jumbled_letters)
+
 };
     // let jumbled_letters = list(random_word) //break random word into separate strings (each letter as a string)
     // random.shuffle(jumbled_letters)  //jumbling up the letters ramdomly
