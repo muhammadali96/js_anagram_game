@@ -1,4 +1,4 @@
-
+const prompt = require("readline-sync").question;
 
 //define categories dictionary
 const categories = {
@@ -16,26 +16,52 @@ const categories = {
 function get_category_choice() {
     console.log("Select a category out of:")
     let categories_keys = Object.keys(categories)
-    //for (const [key, values] of Object.entries(categories)) {
-      //  console.log(`${key}: ${value}`);
-
-    //}
-    for(let counter = 0; counter < categories_keys.length; counter++){
-        console.log(categories_keys[counter])
+    
+    for(let key of categories_keys){
+        console.log(key)
     }
+    let category_name = prompt("Category Choice: ").toUpperCase()
+    let chosen_category = categories[category_name]
+    return chosen_category
+};
 
-    //let category_name = prompt("Category Choice: ").toUpperCase();
-    //let category = categories[category_name]
+// def pick_random_question(category):
+//     answer = random.choice(category)
+//     remove_answer_from_category(answer, category)
 
-    //return category, category_name
+//     jumbled_letters = list(answer)
+//     random.shuffle(jumbled_letters)
+//     jumble = "".join(jumbled_letters)
+//     return answer, jumble
+
+function pick_random_word(chosen_category) {
+    let categories_values = Object.values(chosen_category) //category values in an array
+    let random_word_index = Math.floor(Math.random() * categories_values.length)
+    let random_word = categories_values[random_word_index]
+    console.log(random_word)
+    return random_word
+    
+
+//function jumbling_up_words():
+  //  let jumbled_letters = Object.values
+    // let jumbled_letters = list(random_word) //break random word into separate strings (each letter as a string)
+    // random.shuffle(jumbled_letters)  //jumbling up the letters ramdomly
+    // jumbled_word = "".join(jumbled_letters) //joining single letters back up
+    // return jumbled_word, random_word
+};
 
 
-
-}
 
 //randomly generate value from chosen category,
 // jumble up the word
 //print to screen
 //ask user to input answer
 //store answer/check?
-get_category_choice()
+
+
+
+
+
+
+let chosen_category = get_category_choice()
+pick_random_word(chosen_category)
